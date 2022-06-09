@@ -1,0 +1,18 @@
+# Editors
+.idea
+.vscode
+
+# Reports
+playwright-reports
+
+# Dependency directories
+node_modules/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+/test-results/
+/playwright-report/
+/playwright/.cache/

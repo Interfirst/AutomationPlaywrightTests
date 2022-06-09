@@ -1,0 +1,28 @@
+{
+  "name": "automationplaywrighttests",
+  "version": "1.0.0",
+  "description": "Autotests using the Playwright framework",
+  "main": "index.js",
+  "scripts": {
+    "prepare": "husky install",
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "report": "npx playwright show-report"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Interfirst/AutomationPlaywrightTests.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Interfirst/AutomationPlaywrightTests/issues"
+  },
+  "homepage": "https://github.com/Interfirst/AutomationPlaywrightTests#readme",
+  "devDependencies": {
+    "@playwright/test": "1.22.2",
+    "eslint": "8.17.0",
+    "husky": "8.0.0"
+  }
+}
