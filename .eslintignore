@@ -1,0 +1,6 @@
+*.xml
+*.html
+dist/
+node_modules/
+playwright-reports/
+playwright.config.js
