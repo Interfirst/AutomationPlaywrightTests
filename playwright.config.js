@@ -5,7 +5,7 @@ const { devices } = require('@playwright/test');
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
  */
-// require('dotenv').config();
+//require('dotenv').config({path: '../AutomationPlaywrightTests/configs/qa/qa.env'})
 
 
 /**
@@ -15,7 +15,7 @@ const { devices } = require('@playwright/test');
 const config = {
   testDir: './specs',
   /* Maximum time one test can run for. */
-  timeout: 30 * 1000,
+  timeout: 30 * 900000,
   expect: {
     /**
      * Maximum time expect() should wait for the condition to be met.
@@ -38,7 +38,7 @@ const config = {
     /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
     actionTimeout: 0,
     /* Base URL to use in actions like `await page.goto('/')`. */
-    // baseURL: 'http://localhost:3000',
+    //baseURL: process.env.URL,
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
@@ -47,25 +47,54 @@ const config = {
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'chromium',
+      name: 'QA',
       use: {
         ...devices['Desktop Chrome'],
+        baseURL: 'https://qa-apply.cyberdynemortgage.com',
+        browserName: 'chromium',
+        headless: false,
+        screenshot: 'only-on-failure',
+        viewport: { width: 1280, height: 720 },
       },
     },
 
     {
-      name: 'firefox',
+      name: 'DEV',
       use: {
-        ...devices['Desktop Firefox'],
+        ...devices['Desktop Chrome'],
+        baseURL: 'https://dev-apply.cyberdynemortgage.com',
+        browserName: 'chromium',
+        headless: true,
+        screenshot: 'only-on-failure',
+        viewport: { width: 1280, height: 720 },
       },
     },
 
     {
-      name: 'webkit',
+      name: 'STAGE',
       use: {
-        ...devices['Desktop Safari'],
+        ...devices['Desktop Chrome'],
+        baseURL: 'https://stage-apply.cyberdynemortgage.com',
+        browserName: 'chromium',
+        headless: true,
+        screenshot: 'only-on-failure',
+        viewport: { width: 1280, height: 720 },
       },
-    },
+    }
+
+    // {
+    //   name: 'firefox',
+    //   use: {
+    //     ...devices['Desktop Firefox'],
+    //   },
+    // },
+
+    // {
+    //   name: 'webkit',
+    //   use: {
+    //     ...devices['Desktop Safari'],
+    //   },
+    // },
 
     /* Test against mobile viewports. */
     // {

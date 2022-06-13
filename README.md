@@ -42,7 +42,19 @@ npm i
 
   <a href="https://marketplace.visualstudio.com/items?itemName=ms-playwright.playwright">Playwright Test for VSCode</a>
 
+  4. Run on environments
+
+  Use the project designation when running the test. Example below
+
+  ```sh
+  npx playwright test --project=QA
+  ```
+
+  Where is the project - environment indications
+
 </details>
+
+***
 
 ## Reporting
 

@@ -17,7 +17,7 @@
         // enable additional rules
         "indent": ["error", 4],
         "linebreak-style": ["error", "unix"],
-        "quotes": ["error", "double"],
+        "quotes": [2, "single", { "avoidEscape": true }],
         "semi": ["error", "always"],
         "max-len": ["error", 120],
 

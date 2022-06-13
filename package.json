@@ -25,5 +25,8 @@
     "@playwright/test": "1.22.2",
     "eslint": "8.17.0",
     "husky": "8.0.0"
+  },
+  "dependencies": {
+    "dotenv": "16.0.1"
   }
 }
