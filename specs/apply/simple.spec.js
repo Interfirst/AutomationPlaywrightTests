@@ -1,7 +1,7 @@
 // @ts-check
 
 const { test, expect } = require('@playwright/test');
-const { TypeOfLoanPage } = require('../../../pages/apply/pages/typeOfLoan/typeOfLoanPage');
+const { TypeOfLoanPage } = require('../../pages/apply/pages/typeOfLoan/typeOfLoanPage');
 
 test.describe('Apply', () => {
     test('User open Apply', async ({ page }) => {
