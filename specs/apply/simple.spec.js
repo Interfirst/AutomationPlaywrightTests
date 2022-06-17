@@ -12,7 +12,8 @@ test.describe('Apply', () => {
     test('User click Purchase card', async({page}) => {
         const typeOfLoan = new TypeOfLoanPage(page);
         await page.goto('/');
-        await typeOfLoan.selectLoanType('PURCHASE');
-        //await expect(page.url()).toContain('*/purchase-process-type');
+        await page.locator('div[class^="Loaderstyles__Container"]').waitFor({state: 'hidden'});
+        await typeOfLoan.selectLoanType('Purchase');
+        await expect(page).toHaveURL(/.*purchase-process-type/);
     });
 });

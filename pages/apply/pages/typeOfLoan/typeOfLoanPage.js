@@ -11,7 +11,7 @@ exports.TypeOfLoanPage = class TypeOfLoanPage {
    * @param loan - Loan type
    */
     async selectLoanType(loan) {
-        this.cardType = this.page.locator('[class^="RadioCardstyles__Wrapper"]', {hasText: loan}).waitFor();
-        this.cardType.click();
+        this.cardType = this.page.locator('[class^="RadioCardstyles__Wrapper"]', {hasText: loan});
+        await this.cardType.click();
     }
 };

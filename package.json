@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "prepare": "husky install",
-    "test": "npx playwright test",
+    "test:qa": "npx playwright test --project=QA",
+    "test:dev": "npx playwright test --project=DEV",
+    "test:stage": "npx playwright test --project=STAGE",
     "test:headed": "npx playwright test --headed",
     "report": "npx playwright show-report",
     "lint": "eslint . --ext .js,.ts"
