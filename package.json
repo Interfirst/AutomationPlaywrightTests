@@ -12,6 +12,7 @@
     "report": "npx playwright show-report",
     "lint": "eslint . --ext .js,.ts"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Interfirst/AutomationPlaywrightTests.git"
