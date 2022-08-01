@@ -1,5 +1,6 @@
 // @ts-check
-const { devices } = require('@playwright/test');
+//const { devices } = require('@playwright/test');
+import { devices } from '@playwright/test';
 
 /**
  * Read environment variables from file.
@@ -24,6 +25,9 @@ const config = {
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'line',
+  expect: {
+    timeout: 40000,
+  },
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   /* Configure projects for major browsers */
   projects: [
@@ -37,7 +41,7 @@ const config = {
         screenshot: 'only-on-failure',
         viewport: { width: 1280, height: 720 },
         ignoreHTTPSErrors: true,
-        actionTimeout: 35000,
+        actionTimeout: 40000,
         video: 'off'
       },
     },
@@ -125,4 +129,4 @@ const config = {
   // },
 };
 
-module.exports = config;
+export default config;
