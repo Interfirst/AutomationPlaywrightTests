@@ -5,7 +5,7 @@ import { Pages, Components } from '../../pages/apply/po.mjs';
 test.describe('Apply', () => {
     test('User open Apply', async ({ page }) => {
         await page.goto('/');
-        await expect(page).toHaveURL('https://qa-apply.cyberdynemortgage.com');
+        await expect(page).toHaveURL(new RegExp('/.*type-of-loan'));
     });
 
     test('User click Purchase card', async({page}) => {
